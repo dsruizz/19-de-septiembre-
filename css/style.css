@@ -1,0 +1,369 @@
+/* ================================================================
+   NUESTROS DÍAS — ESTILOS  (v2 — sistema de diseño "carta")
+   ----------------------------------------------------------------
+   Índice rápido (busca estos títulos con Ctrl/Cmd+F):
+   1. TOKENS
+   2. RESET Y BASE
+   3. LAYOUT GENERAL
+   4. TIPOGRAFÍA
+   5. SISTEMA DE TARJETA (el papel que sostiene cada texto)
+   6. PALABRAS DESTACADAS (sistema de resaltado, 4 variantes)
+   7. FLORITURA / DIVISOR
+   8. FOTOGRAFÍAS ESTILO POLAROID
+   9. DECORACIÓN BOTÁNICA Y MARIPOSA
+   10. PANTALLA DE CARGA
+   11. HERO / APERTURA
+   12. CARTA PRINCIPAL
+   13. TODOS LOS UNIVERSOS
+   14. TRANSICIÓN
+   15. LÍNEA DE TIEMPO Y ESTACIONES
+   16. REFLEXIÓN / MENSAJE / INVITACIÓN / CIERRE
+   17. RESPONSIVE
+   18. MOVIMIENTO REDUCIDO
+   ================================================================ */
+
+/* ---------- 1. TOKENS ---------- */
+:root{
+  /* frío — el ambiente */
+  --bg:            #B3D7F2;
+  --bg-soft:       #CFE5F6;
+  --bg-deep:       #9EC7EC;
+  --deep:          #3F5A73;
+  --deep-2:        #24384A;
+  --ink:           #263542;
+  --lavender:      #B9B7DE;
+  --violet:        #8E8FC2;
+  --white:         #FBFCFE;
+
+  /* cálido — el complemento que le da vida y legibilidad al texto */
+  --paper:         #FBF6EC;
+  --paper-2:       #F5EEDF;
+  --paper-line:    rgba(150,112,58,.32);
+  --gold:          #C9A257;
+  --gold-deep:     #9C7A3B;
+  --gold-soft:     rgba(201,162,87,.16);
+
+  --shadow:        rgba(24,38,51,.28);
+  --shadow-soft:   rgba(24,38,51,.16);
+
+  /* tipografía */
+  --font-display: 'Cormorant Garamond', 'Iowan Old Style', Georgia, serif;
+  --font-script:  'Parisienne', var(--font-display);
+  --font-sans:    'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --col-max: 480px;
+  --gutter: 7vw;
+  --radius: 3px;
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+/* ---------- 2. RESET Y BASE ---------- */
+*, *::before, *::after{ box-sizing: border-box; }
+body{
+  margin:0;
+  background: var(--deep-2);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img{ display:block; max-width:100%; }
+h1,h2,h3,p{ margin:0; }
+::selection{ background: var(--gold); color: var(--white); }
+::-webkit-scrollbar{ width:6px; }
+::-webkit-scrollbar-thumb{ background: var(--deep); border-radius: 4px; }
+
+/* ---------- 3. LAYOUT GENERAL ---------- */
+#app{
+  position: relative;
+  max-width: var(--col-max);
+  margin: 0 auto;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 45%, var(--bg) 100%);
+  overflow: hidden;
+  min-height: 100vh;
+  box-shadow: 0 0 90px var(--shadow);
+}
+@media (min-width: 560px){
+  body{ display:flex; justify-content:center; }
+  #app{ margin: 0; }
+}
+.section{ position: relative; width: 100%; padding: 18vw var(--gutter) 18vw; }
+.center{ text-align:center; }
+
+/* ---------- 4. TIPOGRAFÍA ---------- */
+.display{
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--deep-2);
+  line-height: 1.1;
+}
+.fecha{
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 12.5px;
+  letter-spacing: .1em;
+  color: var(--gold-deep);
+}
+.parrafo{
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--ink);
+  max-width: 32ch;
+  margin-left:auto;
+  margin-right:auto;
+}
+.parrafo + .parrafo{ margin-top: 1.15em; }
+.align-left .parrafo, .align-left .fecha{ margin-left:0; text-align:left; }
+.align-right .parrafo{ margin-right:0; text-align:right; margin-left:auto; }
+
+.word-grande{
+  display:block;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(38px, 14vw, 58px);
+  color: var(--gold-deep);
+  line-height: .95;
+  margin: .5em 0;
+}
+
+/* ---------- 5. SISTEMA DE TARJETA ---------- */
+/* El "papel" que sostiene cada texto — es lo que unifica toda la
+   experiencia y da el contraste que hacía falta contra el azul. */
+.tarjeta{
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--paper-line);
+  border-radius: var(--radius);
+  padding: 11vw 8vw 10vw;
+  box-shadow: 0 26px 46px -22px var(--shadow), 0 2px 8px var(--shadow-soft);
+}
+.tarjeta::before{
+  /* hilo de costura sutil, como el borde de una hoja de carta */
+  content:"";
+  position:absolute; inset: 9px;
+  border: 1px solid rgba(150,112,58,.18);
+  pointer-events:none;
+}
+.tarjeta--tilt-l{ transform: rotate(-0.9deg); }
+.tarjeta--tilt-r{ transform: rotate(0.9deg); }
+
+.tarjeta .parrafo, .tarjeta .fecha, .tarjeta .estacion-titulo{ position:relative; z-index:1; }
+
+/* pequeña etiqueta con fecha/contexto, como un sello */
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding: 6px 15px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  background: var(--gold-soft);
+  color: var(--gold-deep);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: .04em;
+  font-weight:500;
+}
+
+/* ---------- 6. PALABRAS DESTACADAS (variedad, no siempre el mismo recurso) ---------- */
+.hl-oro{ color: var(--gold-deep); font-weight:600; font-style:normal; }
+.hl-script{ font-family: var(--font-script); font-size: 1.42em; color: var(--gold-deep); line-height:1; }
+.hl-subrayado{ position:relative; display:inline-block; font-style:normal; }
+.hl-subrayado::after{
+  content:""; position:absolute; left:-2px; right:-2px; bottom:1px; height:.42em;
+  background: rgba(201,162,87,.38); z-index:-1; border-radius:1px;
+}
+.hl-marco{
+  display:inline-block; padding: 1px 13px 3px; margin: 0 1px;
+  border: 1px solid var(--gold); border-radius: 999px;
+  color: var(--gold-deep); font-style:normal; font-weight:500;
+}
+.acento-amarillo{ color:#B7923F; font-weight:600; font-style:normal; }
+
+/* ---------- 7. FLORITURA / DIVISOR ---------- */
+.flourish{
+  display:flex; align-items:center; justify-content:center; gap:14px;
+  margin: 9vw 0; padding: 0 6vw;
+}
+.flourish::before, .flourish::after{
+  content:""; flex:1; height:1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity:.6;
+}
+.flourish svg{ width:18px; height:18px; flex:0 0 auto; opacity:.85; }
+
+/* ---------- 8. FOTOGRAFÍAS ESTILO POLAROID ---------- */
+.photo{
+  position:relative;
+  background: var(--paper);
+  padding: 10px 10px 26px;
+  border: 1px solid rgba(63,90,115,.14);
+  border-radius: 2px;
+  box-shadow: 0 20px 34px -18px var(--shadow);
+}
+.photo-inner{
+  position:relative; overflow:hidden;
+  background: linear-gradient(155deg, var(--bg-soft), #E7F0F8 60%, var(--bg-soft));
+  aspect-ratio: 4/5;
+}
+.photo--wide .photo-inner{ aspect-ratio: 5/4; }
+.photo--tall .photo-inner{ aspect-ratio: 3/4.6; }
+.photo--square .photo-inner{ aspect-ratio: 1/1; }
+
+.photo img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  opacity:0; transition: opacity .6s var(--ease);
+}
+.photo.is-loaded img{ opacity:1; }
+
+.photo .placeholder-label{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  padding: 12%;
+  font-family: var(--font-sans);
+  font-size: 10.5px; letter-spacing: .09em; font-weight:500;
+  color: var(--deep); opacity:.55;
+}
+.photo.is-loaded .placeholder-label{ display:none; }
+
+.galeria{ position:relative; margin: 8vw 0 2vw; }
+.galeria .photo{ width: 64%; }
+.galeria .photo.offset-r{ margin-left: auto; width: 70%; margin-top: -7vw; }
+.galeria .photo.offset-l{ width: 57%; margin-top: -9vw; margin-left: 6%; }
+.galeria .photo.full{ width: 100%; margin-top: 5vw; }
+
+/* ---------- 9. DECORACIÓN BOTÁNICA Y MARIPOSA ---------- */
+.deco{ position:absolute; pointer-events:none; opacity:.85; z-index:0; }
+.deco svg{ width:100%; height:100%; display:block; }
+.deco--corner-tl{ top:-6%; left:-10%; width:34vw; }
+.deco--corner-br{ bottom:-6%; right:-10%; width:38vw; }
+.deco--float{ width:15vw; }
+
+#timeline-butterfly{
+  position:absolute; width:32px; height:32px; top:0; left:0;
+  z-index:3; will-change: transform; pointer-events:none;
+}
+
+/* ---------- 10. PANTALLA DE CARGA ---------- */
+#loader{
+  position:fixed; inset:0; z-index:999;
+  background: radial-gradient(120% 120% at 50% 20%, #4A6C88 0%, var(--deep-2) 70%);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap: 22px; color: var(--white);
+}
+#loader .loader-butterfly{ width:56px; height:56px; }
+#loader .loader-percent{ font-family: var(--font-display); font-style:italic; font-weight:600; font-size: 34px; color: var(--gold); }
+#loader .loader-text{ font-family: var(--font-sans); font-size:12px; letter-spacing:.1em; color: rgba(255,255,255,.7); }
+#loader.is-hidden{ animation: loaderOut .9s var(--ease) forwards; pointer-events:none; }
+@keyframes loaderOut{ to{ opacity:0; visibility:hidden; } }
+
+/* ---------- 11. HERO / APERTURA ---------- */
+#hero{
+  min-height:100svh;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding: 12vw var(--gutter); position:relative;
+}
+#hero .hero-linea{ opacity:0; }
+#hero .hero-tarjeta{ width:100%; }
+#hero .hero-susurro{ font-family: var(--font-script); font-size: 25px; color: var(--gold-deep); margin-bottom: 6vw; }
+#hero .hero-titulo{ font-size: clamp(32px, 9.5vw, 44px); margin-bottom: 4vw; }
+#hero .hero-sub{ font-family: var(--font-sans); font-weight:300; font-size:14.5px; color:var(--deep); }
+#hero .hero-scroll{
+  position:absolute; bottom: 7vw; left:50%; transform:translateX(-50%);
+  font-size:11px; letter-spacing:.16em; color:var(--white); opacity:.7; text-align:center;
+}
+#hero .hero-scroll span{ display:block; width:1px; height:30px; background:var(--gold); margin:8px auto 0; opacity:.8; }
+
+/* ---------- 12. CARTA PRINCIPAL ---------- */
+#carta{ padding-top: 12vw; }
+#carta .tarjeta{ opacity:0; }
+#carta .bloque{ margin-bottom: 1.15em; }
+#carta .bloque:last-of-type{ margin-bottom:0; }
+#carta .carta-inicial::first-letter{
+  font-family: var(--font-display); font-style:italic; font-weight:600;
+  font-size: 3.4em; line-height:.75; float:left;
+  padding: 6px 9px 0 0; color: var(--gold-deep);
+}
+#carta .word-grande{ text-align:center; margin-top: 1.3em; }
+
+/* ---------- 13. TODOS LOS UNIVERSOS ---------- */
+#universos{ background: linear-gradient(180deg, var(--bg), var(--bg-soft)); }
+#universos .universos-titulo{ font-size: clamp(27px, 8vw, 35px); line-height:1.2; opacity:0; }
+#universos .universos-titulo .signo{ color: var(--violet); }
+#universos .universos-titulo .juntos{ font-family: var(--font-script); font-size: 1.48em; color: var(--gold-deep); }
+
+.universos-carrusel{ margin-top: 9vw; position:relative; }
+.universos-track{
+  display:flex; gap: 0; overflow-x:auto; scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling:touch; padding: 4vw 0 2vw; scrollbar-width:none;
+}
+.universos-track::-webkit-scrollbar{ display:none; }
+.universo-item{ flex: 0 0 66%; scroll-snap-align:center; margin: 0 3.5vw; text-align:center; }
+.universo-item .photo-inner{ aspect-ratio: 3/4; }
+.universo-item .universo-label{ margin-top: 3vw; font-family: var(--font-sans); font-size:11px; letter-spacing:.1em; color:var(--gold-deep); }
+.universos-dots{ display:flex; justify-content:center; gap:6px; margin-top: 5vw; }
+.universos-dots .dot{ width:5px; height:5px; border-radius:50%; background: var(--gold); opacity:.32; transition: opacity .3s var(--ease), transform .3s var(--ease); }
+.universos-dots .dot.is-active{ opacity:1; transform:scale(1.35); }
+
+#universos .universos-respuesta{ margin-top: 11vw; font-size: 14.5px; font-weight:300; color: var(--deep); }
+#universos .universos-respuesta .si{ font-family: var(--font-script); font-size: 2.1em; color: var(--gold-deep); display:block; margin-top: 2vw; }
+
+/* ---------- 14. TRANSICIÓN ---------- */
+#transicion{
+  min-height: 62vh; display:flex; align-items:center; justify-content:center; text-align:center;
+  position:relative; background: linear-gradient(180deg, var(--bg-soft), #DCE9F5 50%, var(--bg));
+}
+#transicion .transicion-texto{ font-size: clamp(21px, 6.6vw, 27px); max-width: 19ch; opacity:0; color: var(--deep-2); }
+
+/* ---------- 15. LÍNEA DE TIEMPO Y ESTACIONES ---------- */
+#timeline{ position:relative; background: var(--bg); padding-top: 4vw; }
+
+.timeline-path-wrap{ position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+.timeline-path-wrap svg{ width:100%; height:100%; }
+#timeline-path{ fill:none; stroke: rgba(201,162,87,.55); stroke-width:1.6; stroke-linecap: round; stroke-dasharray: 5 11; }
+
+.estacion{ position:relative; z-index:1; padding: 15vw var(--gutter) 6vw; }
+.estacion-texto{ opacity:0; }
+.estacion .estacion-titulo{ font-size: clamp(28px, 8.4vw, 37px); margin: 3vw 0 5vw; }
+.estacion .pill{ margin-bottom: 4vw; }
+
+.estacion--canela .tarjeta{ background: linear-gradient(165deg, var(--paper), #F1EEF8 130%); }
+.estacion--brilla .tarjeta{ background: linear-gradient(165deg, var(--paper), #F7EFE0 130%); }
+.estacion--graduacion .galeria{ margin-bottom: 4vw; }
+
+/* ---------- 16. REFLEXIÓN / MENSAJE / INVITACIÓN / CIERRE ---------- */
+#reflexion, #mensaje{ text-align:center; background: linear-gradient(180deg, var(--bg), #DCE9F5); }
+#reflexion .tarjeta, #mensaje .tarjeta{ opacity:0; text-align:left; }
+#reflexion .parrafo, #mensaje .parrafo{ text-align:left; margin-left:0; }
+#mensaje .mensaje-titulo{ text-align:center; font-size: clamp(24px,7.4vw,30px); margin-bottom:6vw; }
+
+#invitacion{
+  min-height: 92svh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  background: linear-gradient(180deg, #DCE9F5, var(--deep) 150%); text-align:center;
+  padding: 14vw var(--gutter);
+}
+#invitacion .invitacion-pregunta{ font-size: clamp(27px, 8.2vw, 35px); color: var(--deep-2); opacity:0; }
+#invitacion .invitacion-fecha{ margin-top: 8vw; font-family: var(--font-sans); font-weight:600; font-size:14.5px; letter-spacing:.06em; color: var(--gold-deep); opacity:0; }
+#invitacion .invitacion-indicacion{ margin-top: 9vw; font-size:12px; letter-spacing:.05em; color: var(--white); opacity:.75; }
+#invitacion .invitacion-indicacion a{ color:var(--gold); text-decoration:underline; text-underline-offset:3px; }
+
+#cierre{ padding-top: 24vw; padding-bottom: 24vw; background: var(--deep-2); text-align:center; }
+#cierre .cierre-texto{ font-size: clamp(25px, 7.6vw, 31px); color: var(--bg); opacity:0; }
+#cierre .cierre-firma{ margin-top: 5vw; font-family: var(--font-script); font-size: 22px; color: var(--gold); opacity:.9; }
+
+/* ---------- 17. RESPONSIVE ---------- */
+@media (min-width: 401px){ .section{ padding-left: 32px; padding-right: 32px; } .parrafo{ font-size: 16.5px; } }
+@media (min-width: 560px){ :root{ --gutter: 40px; } }
+
+/* ---------- 18. MOVIMIENTO REDUCIDO ---------- */
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.2s !important; }
+  .hero-linea, .tarjeta, .estacion-texto, .transicion-texto, .universos-titulo,
+  .invitacion-pregunta, .invitacion-fecha, .cierre-texto{ opacity:1 !important; transform:none !important; }
+  #timeline-butterfly{ display:none; }
+}

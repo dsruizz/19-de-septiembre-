@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nuestros Días</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500;1,600&family=Parisienne&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     SPRITE SVG — mariposa y flores reutilizables en toda la web
+     ============================================================ -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="icon-butterfly" viewBox="0 0 100 100">
+      <g fill="none" stroke="#3F5A73" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M50 46 C38 20, 10 14, 6 30 C2 46, 24 54, 50 46 Z" fill="#FBFCFE" fill-opacity=".85"/>
+        <path d="M50 46 C62 20, 90 14, 94 30 C98 46, 76 54, 50 46 Z" fill="#FBFCFE" fill-opacity=".85"/>
+        <path d="M50 50 C40 66, 18 72, 16 62 C14 52, 30 48, 50 50 Z" fill="#FBFCFE" fill-opacity=".7"/>
+        <path d="M50 50 C60 66, 82 72, 84 62 C86 52, 70 48, 50 50 Z" fill="#FBFCFE" fill-opacity=".7"/>
+        <line x1="50" y1="40" x2="50" y2="68"/>
+        <path d="M50 40 C47 32, 42 28, 39 26"/>
+        <path d="M50 40 C53 32, 58 28, 61 26"/>
+      </g>
+    </symbol>
+    <symbol id="icon-hortensia" viewBox="0 0 120 120">
+      <g fill="#B9B7DE">
+        <circle cx="60" cy="30" r="9"/><circle cx="86" cy="46" r="9"/><circle cx="86" cy="76" r="9"/>
+        <circle cx="60" cy="92" r="9"/><circle cx="34" cy="76" r="9"/><circle cx="34" cy="46" r="9"/>
+        <circle cx="60" cy="60" r="10" fill="#8E8FC2"/>
+      </g>
+      <g fill="#CFE5F6" opacity=".7">
+        <circle cx="60" cy="30" r="3.2"/><circle cx="86" cy="46" r="3.2"/><circle cx="86" cy="76" r="3.2"/>
+        <circle cx="60" cy="92" r="3.2"/><circle cx="34" cy="76" r="3.2"/><circle cx="34" cy="46" r="3.2"/>
+      </g>
+    </symbol>
+    <symbol id="icon-flor" viewBox="0 0 60 60">
+      <g fill="#CFE5F6">
+        <ellipse cx="30" cy="14" rx="8" ry="13"/>
+        <ellipse cx="30" cy="46" rx="8" ry="13"/>
+        <ellipse cx="14" cy="30" rx="13" ry="8"/>
+        <ellipse cx="46" cy="30" rx="13" ry="8"/>
+      </g>
+      <circle cx="30" cy="30" r="7" fill="#8E8FC2"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============================================================
+     PANTALLA DE CARGA
+     ============================================================ -->
+<div id="loader" aria-hidden="true">
+  <svg class="loader-butterfly" viewBox="0 0 100 100"><use href="#icon-butterfly"/></svg>
+  <div id="loader-percent" class="loader-percent">0%</div>
+  <div class="loader-text">preparando nuestros recuerdos…</div>
+</div>
+
+<div id="app">
+
+  <!-- ============================================================
+       HERO / APERTURA
+       ============================================================ -->
+  <section id="hero" class="section">
+    <div id="hero-bg" class="deco" style="position:absolute;inset:0;background-size:cover;background-position:center;opacity:.18;"></div>
+    <div class="deco deco--corner-tl"><svg viewBox="0 0 120 120"><use href="#icon-hortensia"/></svg></div>
+
+    <div class="tarjeta hero-tarjeta">
+      <p id="hero-susurro" class="hero-linea hero-susurro">no te dejaré de amar jamás, lloros.</p>
+      <h1 id="hero-titulo" class="hero-linea hero-titulo display">Feliz día del amor<br>y la amistad</h1>
+      <p id="hero-sub" class="hero-linea hero-sub">Una de tantas fechas que quiero crear contigo.</p>
+    </div>
+
+    <div id="hero-scroll" class="hero-linea hero-scroll">desliza<span></span></div>
+    <div class="deco deco--corner-br"><svg viewBox="0 0 120 120"><use href="#icon-hortensia"/></svg></div>
+  </section>
+
+  <!-- ============================================================
+       CARTA PRINCIPAL
+       (Editar el TEXTO de esta sección es seguro: son párrafos
+       normales de HTML. No tocar las clases ni los <span>.)
+       ============================================================ -->
+  <section id="carta" class="section">
+
+    <div class="tarjeta">
+      <p class="bloque parrafo carta-inicial">Silvana, eres la mujer que quiero tratar como <em class="hl-marco">reina</em> por el resto de mi vida. No importa lo que tenga que aprender, enfrentar o superar: lo haré por ti.</p>
+
+      <p class="bloque parrafo">Como te dije, no soy de fechas, no tengo muy buena memoria y soy fastidioso — a veces incluso más <em>showcero</em> que tú. Pero no quiero que tus deseos se queden sin cumplir. No voy a permitirlo.</p>
+
+      <p class="bloque parrafo">Así que, dentro de lo que está en mis manos, me tomé la libertad de reunir los días más importantes que recuerdo. Aunque, para mí, cualquier día que pueda pasar <span class="hl-script">contigo</span> ya es una fecha especial.</p>
+
+      <p class="bloque parrafo">Levantarme y ser tu pareja me hace sentir <em class="hl-oro">orgulloso</em>. Eres una mujer <em class="hl-subrayado">maravillosa</em>, <em class="hl-marco">guerrera</em> y muy <em class="hl-oro">inteligente</em>.</p>
+
+      <p class="bloque parrafo">Todo lo que esté en mis manos para hacerte <em class="hl-subrayado">feliz</em>, lo haré.</p>
+    </div>
+
+    <p class="word-grande">te amo,<br>morena hermosa.</p>
+
+    <div class="flourish"><svg viewBox="0 0 60 60"><use href="#icon-flor"/></svg></div>
+
+  </section>
+
+  <!-- ============================================================
+       TODOS LOS UNIVERSOS
+       (Las imágenes de esta sección se llenan solas desde
+       config.js → CONFIG.universos. No edites aquí.)
+       ============================================================ -->
+  <section id="universos" class="section center">
+    <h2 class="universos-titulo display"><span class="signo">¿</span>crees que estemos <span class="juntos">juntos</span><br>en todos los universos<span class="signo">?</span></h2>
+
+    <div class="universos-carrusel">
+      <div class="universos-track" id="universos-track"></div>
+      <div class="universos-dots" id="universos-dots"></div>
+    </div>
+
+    <p class="universos-respuesta">la respuesta es<span class="si">sí</span></p>
+  </section>
+
+  <!-- ============================================================
+       TRANSICIÓN
+       ============================================================ -->
+  <section id="transicion" class="section">
+    <p class="transicion-texto display">De todos los universos posibles, elijo contarte el nuestro.</p>
+    <div class="deco deco--float" style="left:10%; top:20%;"><svg viewBox="0 0 60 60"><use href="#icon-flor"/></svg></div>
+  </section>
+
+  <!-- ============================================================
+       LÍNEA DE TIEMPO
+       ============================================================ -->
+  <section id="timeline">
+
+    <div class="timeline-path-wrap">
+      <svg id="timeline-svg" preserveAspectRatio="none"><path id="timeline-path"/></svg>
+    </div>
+    <div id="timeline-butterfly"><svg viewBox="0 0 100 100"><use href="#icon-butterfly"/></svg></div>
+
+    <!-- ESTACIÓN 01 — CONOCIMOS -->
+    <article class="estacion align-left">
+  <div class="estacion-texto tarjeta tarjeta--tilt-l">
+      <span class="pill">Enero 2022 — semana de inducción</span>
+      <p class="fecha">ENERO 2022</p>
+      <h3 class="estacion-titulo display">El día que comenzó todo</h3>
+
+      <p class="parrafo">Todo empezó ahí. Lo primero que pensé fue que eras una mujer feliz, social y tan distinta a mí, que solo lograste llamar más mi atención. Mi único pensamiento era conocerte más.</p>
+      <p class="parrafo">Y lo peor es que, ese día, por socializar con Jhonier —a quien vi hablando contigo— no me di cuenta de que ya me habían robado el corazón. Aunque técnicamente también me robaron el celular por primera vez, jajaja.</p>
+      <p class="parrafo">Ese pequeño detalle terminó desencadenando algo mucho más importante: poder hablarte, días después, en el campus. El resto de la historia ya la conocemos los dos.</p>
+      <p class="parrafo">Y créeme, pienses lo que pienses, siempre me pareciste una <span class="hl-script">morena hermosa</span> que quería besar cada vez que tenía la oportunidad. Cada vez que me dejabas acariciarte los brazos, la cara, el pelo o las piernas. Las veces que en TransMilenio estábamos tan cerca y mi único pensamiento era darte un beso.</p>
+      <p class="parrafo">Incluso cuando me preguntabas si te odiaba o si no te quería. Las cosas no han cambiado mucho desde ahí, porque todavía me lo sigues preguntando. Y yo siempre te voy a seguir diciendo que amo y amaré a la niña que le dice "Solecito" a un personaje tan estúpido como yo.</p>
+  </div>
+
+      <div class="galeria" data-gallery="conocimos"></div>
+    </article>
+
+    <div class="flourish"><svg viewBox="0 0 60 60"><use href="#icon-flor"/></svg></div>
+
+
+    <!-- ESTACIÓN 02 — LA PRIMERA VEZ -->
+    <article class="estacion align-right">
+  <div class="estacion-texto tarjeta tarjeta--tilt-r">
+      <span class="pill">3 de junio de 2024</span>
+      <p class="fecha">3 DE JUNIO DE 2024</p>
+      <h3 class="estacion-titulo display">La primera vez</h3>
+
+      <p class="parrafo">Fue la primera vez que llevé a alguien a mi casa. Ni siquiera a mis amigos. Tú fuiste la primera persona en conocer mi hogar y a mi familia.</p>
+      <p class="parrafo">Aquella primera vez fue corta —estabas esperando un taxi— pero para mí terminó significando muchísimo más. Cuando pienso en esta fecha, pienso en nosotros haciendo nuestro proyecto más exigente: uno que nos quitó muchas horas de sueño, no solo por su dificultad, sino porque fue la primera vez que te besé.</p>
+      <p class="parrafo">Desde ahí, cada sesión de trabajo en diseño se convirtió también en el deseo de estar cerca de ti todo el tiempo. Y pese a todo, siempre sentí que lo que nos propusiéramos juntos iba a salir de la mejor manera.</p>
+      <p class="parrafo">Antes de darme cuenta de cuánto te amaba, ya había empezado a compartir contigo cosas que nunca había compartido con nadie: invitarte al gimnasio, invitarte a mi casa, acompañarte a asados, verte quedarte a dormir, y hasta inventar mentiras para poder estar en la tuya.</p>
+      <p class="parrafo">Poco a poco fui conociendo a la persona de la que terminaría enamorándome.</p>
+  </div>
+
+      <div class="galeria" data-gallery="casa" data-size="photo--wide"></div>
+    </article>
+
+    <div class="flourish"><svg viewBox="0 0 60 60"><use href="#icon-flor"/></svg></div>
+
+
+    <!-- ESTACIÓN 03 — MONSERRATE -->
+    <article class="estacion align-left">
+  <div class="estacion-texto tarjeta tarjeta--tilt-l">
+      <span class="pill">21 de julio de 2024</span>
+      <p class="fecha">21 DE JULIO DE 2024</p>
+      <h3 class="estacion-titulo display">Monserrate</h3>
+
+      <p class="parrafo">La primera vez que subimos Monserrate. Una subida que, según dicen, separa a las parejas. Pero hasta el momento hemos estado lo más juntos que se ha podido.</p>
+      <p class="parrafo">Y aunque el mismo Zeus bajara a querer separarme de ti —o el dios que fuera— no lo haría. Me aferraría todo lo que pudiera. Y no de una manera tóxica: quiero luchar por ti, por nosotros, y por que nuestra vida juntos sea feliz y muy duradera.</p>
+      <p class="parrafo">Este día es importante porque empecé a notar que aquello era mucho más que atracción por tu belleza. No solo tu belleza física — tu actitud, tu forma de ser, ser la persona más <em class="hl-marco">maravillosa</em> que conozco.</p>
+      <p class="parrafo">Y no bromeo cuando digo que eres de las cosas más bellas que puede ver cualquier persona. O sea… solo mírate.</p>
+  </div>
+
+      <div class="galeria" data-gallery="monserrate"></div>
+    </article>
+
+    <div class="flourish"><svg viewBox="0 0 60 60"><use href="#icon-flor"/></svg></div>
+
+
+    <!-- ESTACIÓN 04 — SALITRE MÁGICO -->
+    <article class="estacion align-right">
+  <div class="estacion-texto tarjeta tarjeta--tilt-r">
+      <span class="pill">9 de octubre de 2024</span>
+      <p class="fecha">9 DE OCTUBRE DE 2024</p>
+      <h3 class="estacion-titulo display">Salitre Mágico</h3>
+
+      <p class="parrafo">¿Quién diría que un lugar que dice ser mágico realmente me haría sentir así de especial? Fue la primera vez que te vi a los ojos pensando en despertar, hasta el último día de mi vida, teniendo la oportunidad de estar contigo.</p>
+      <p class="parrafo">Ver el atardecer en la rueda de la fortuna me dio la fortuna más valiosa que tengo: tu compañía. Ese día no faltaron risas, gritos ni cariño. Fue mágico, y lo repetiría infinitamente en mi cabeza.</p>
+      <p class="parrafo">Porque no se quedó solo en el parque. También estuvo la posibilidad de salir de una cita así, llegar a tu casa, dormir y despertar a tu lado. Eso no tiene comparación.</p>
+  </div>
+
+      <div class="galeria" data-gallery="salitre" data-size="photo--wide"></div>
+    </article>
+
+    <div class="flourish"><svg viewBox="0 0 60 60"><use href="#icon-flor"/></svg></div>
+
+
+    <!-- ESTACIÓN 05 — PRIMER TE AMO (HALLOWEEN) -->
+    <article class="estacion align-left">
+  <div class="estacion-texto tarjeta tarjeta--tilt-l">
+      <span class="pill">31 de octubre de 2024</span>
+      <p class="fecha">31 DE OCTUBRE DE 2024</p>
+      <h3 class="estacion-titulo display">El primer "te amo"</h3>
+
+      <p class="parrafo">No hace falta robarnos la fecha exacta. Buscar el disfraz, que me tuvieras en cuenta para compartir una festividad, fue bonito. Un plan tranquilo: maquillarnos como esqueletos, vestirnos de negro.</p>
+      <p class="parrafo">Veinte cambios de disfraz después, una bolsa llena de dulces y todo tu maquillaje en nuestra cara — ya estábamos listos para salir. No importaba que nos dijeran que estábamos muy viejos para pedir dulces, jajaja.</p>
+      <p class="parrafo">Fue muy lindo salir, ver disfraces y comer dulces junto a ti. Eres la calavera más hermosa que he visto. Tu vestido negro no necesita explicación: te quedaba hermoso. Robaste la mirada de los demás y tenías toda mi atención.</p>
+      <p class="parrafo">Pero lo más bonito fue llegar, escucharte mirándome a los ojos y, después de un beso, escuchar el</p>
+      <p class="word-grande">"te amo"</p>
+      <p class="parrafo">que estaba esperando. Lloré de felicidad, porque le habías devuelto un corazón a un esqueleto. Y yo te voy a contestar siempre: <em class="hl-oro">te amo</em> mil veces más, mi vida hermosa.</p>
+  </div>
+
+      <div class="galeria" data-gallery="halloween"></div>
+    </article>
+
+    <div class="flourish"><svg viewBox="0 0 60 60"><use href="#icon-flor"/></svg></div>
+
+
+    <!-- ESTACIÓN 06 — DICIEMBRE 2024 -->
+    <article class="estacion align-right">
+  <div class="estacion-texto tarjeta tarjeta--tilt-r">
+      <span class="pill">Diciembre 2024</span>
+      <p class="fecha">DICIEMBRE 2024</p>
+      <h3 class="estacion-titulo display">Un diciembre distinto</h3>
+
+      <p class="parrafo">Diciembre siempre ha sido una fecha bonita y difícil para los dos, porque normalmente estamos separados. Pero ese año me diste un día feliz: saltamos en trampolines y molestamos como niños.</p>
+      <p class="parrafo">Te amo demasiado por darme experiencias tan bonitas. Y también siento algo triste por mí, porque a veces siento que no puedo darte todas las experiencias que me gustaría darte.</p>
+  </div>
+
+      <div class="galeria" data-gallery="diciembre"></div>
+    </article>
+
+    <div class="flourish"><svg viewBox="0 0 60 60"><use href="#icon-flor"/></svg></div>
+
+
+    <!-- ESTACIÓN 07 — FESTIVAL BRILLA -->
+    <article class="estacion align-left estacion--brilla">
+  <div class="estacion-texto tarjeta tarjeta--tilt-l">
+      <span class="pill">20 de diciembre de 2024</span>
+      <p class="fecha">20 DE DICIEMBRE DE 2024</p>
+      <h3 class="estacion-titulo display">Festival Brilla</h3>
+
+      <p class="parrafo">Recuerdo la emoción que tenías por ver los alumbrados. Lo único que pensé fue que podíamos verlos antes de que te fueras a pasar Navidad y Año Nuevo a otro lugar.</p>
+      <p class="parrafo">Me sentí muy feliz de ir contigo y vivir una nueva experiencia: caminar, ver cosas bonitas, tomarnos fotos, y simplemente verte sonreír. Eso fue lo mejor.</p>
+      <p class="parrafo">Tu sonrisa y tu coronita de luces fueron lo más bello de los alumbrados. Y salir de ahí a comer pollito contigo no tiene precio, jajaja.</p>
+  </div>
+
+      <div class="galeria" data-gallery="festivalbrilla"></div>
+    </article>
+
+    <div class="flourish"><svg viewBox="0 0 60 60"><use href="#icon-flor"/></svg></div>
+
+
+    <!-- ESTACIÓN 08 — CUMPLEAÑOS 18 -->
+    <article class="estacion align-right">
+  <div class="estacion-texto tarjeta tarjeta--tilt-r">
+      <span class="pill">Diciembre 2024</span>
+      <p class="fecha">CUMPLEAÑOS 18</p>
+      <h3 class="estacion-titulo display">Mayor de edad, oficialmente</h3>
+
+      <p class="parrafo">Y también estaba tu cumpleaños 18. Ya éramos mayores de edad oficialmente, jajaja. Ese año te di unos pocos regalos cuando volviste: algunos hechos a mano, otros comprados con un poquito de lo que tenía.</p>
+      <p class="parrafo">Créeme que cada cosa que hago por ti la hago con todo mi corazón, con ganas y con la intención de que veas cuánto te amo. No fue exactamente el día de tu cumpleaños, pero espero que te hayan gustado — y también la comida en el restaurante de pasta, tu favorita.</p>
+      <p class="parrafo">A partir de ahí nos volvimos pequeños adultos intentando conquistar retos: un año menos de carrera, y un año menos para llegar a la desesperación de no saber qué hacer con la vida. Pero eso le espera a uno al cumplir 20, jajaja. Juntos saldremos adelante, amor.</p>
+  </div>
+
+      <div class="galeria" data-gallery="cumple18"></div>
+    </article>
+
+    <div class="flourish"><svg viewBox="0 0 60 60"><use href="#icon-flor"/></svg></div>
+
+
+    <!-- ESTACIÓN 09 — CANELA -->
+    <article class="estacion align-left estacion--canela">
+  <div class="estacion-texto tarjeta tarjeta--tilt-l">
+      <span class="pill">23 de julio de 2025</span>
+      <p class="fecha">23 DE JULIO DE 2025</p>
+      <h3 class="estacion-titulo display">Canela</h3>
+
+      <p class="parrafo">Llegó una nueva integrante a nuestra relación. Desde ahí hemos tenido una bebé muy intensa y consentida en nuestra vida.</p>
+      <p class="word-grande">Canela.</p>
+      <p class="parrafo">La perrita más linda y bella del mundo.</p>
+  </div>
+
+      <div class="galeria" data-gallery="canela" data-size="photo--square"></div>
+    </article>
+
+    <div class="flourish"><svg viewBox="0 0 60 60"><use href="#icon-flor"/></svg></div>
+
+
+    <!-- ESTACIÓN 10 — LLEGADA DE LA BEBÉ -->
+    <article class="estacion align-right estacion--canela">
+  <div class="estacion-texto tarjeta tarjeta--tilt-r">
+      <span class="pill">Agosto de 2025</span>
+      <p class="fecha">AGOSTO DE 2025</p>
+      <h3 class="estacion-titulo display">La llegada de nuestra bebé</h3>
+
+      <p class="parrafo">Fue la llegada de la bebé a Tierra Fría. Te recogí y la vi por primera vez. Y desde ahí supe que cuidaría a mis dos mujeres como pudiera.</p>
+  </div>
+
+      <div class="galeria" data-gallery="llegadacanela" data-size="photo--square"></div>
+    </article>
+
+    <div class="flourish"><svg viewBox="0 0 60 60"><use href="#icon-flor"/></svg></div>
+
+
+    <!-- ESTACIÓN 11 — PRIMER PICNIC -->
+    <article class="estacion align-left">
+  <div class="estacion-texto tarjeta tarjeta--tilt-l">
+      <span class="pill">29 de agosto de 2025</span>
+      <p class="fecha">29 DE AGOSTO DE 2025</p>
+      <h3 class="estacion-titulo display">Nuestro primer picnic</h3>
+
+      <p class="parrafo">Nuestro primer picnic oficial, con la bebé. Parque, sol, comida y actividades juntos, para recibir un nuevo año.</p>
+  </div>
+
+      <div class="galeria" data-gallery="picnic"></div>
+    </article>
+
+    <div class="flourish"><svg viewBox="0 0 60 60"><use href="#icon-flor"/></svg></div>
+
+
+    <!-- ESTACIÓN 12 — PRIMERA COCINADA -->
+    <article class="estacion align-right">
+  <div class="estacion-texto tarjeta tarjeta--tilt-r">
+      <span class="pill">15 de octubre de 2025</span>
+      <p class="fecha">15 DE OCTUBRE DE 2025</p>
+      <h3 class="estacion-titulo display">Nuestra primera cocinada</h3>
+
+      <p class="parrafo">Hicimos una lasaña gigante y vimos el desfile de Victoria's Secret. Ni la comida ni la belleza de ese desfile se comparan con tenerte en pijama, cocinando a mi lado.</p>
+      <p class="parrafo">Y no fue suficiente con la lasaña: hicimos nuestra segunda obra maestra, una pizza. Pero el toque colombiano fueron las empanadas, jajaja.</p>
+      <p class="parrafo">Puede que haya sido mucho trabajo. Puede que no seamos los mejores. Pero lo intentamos. Cocinar juntos es una de las citas que más me gustan, porque comemos, peleamos, nos reímos y podemos hacer lo que queramos juntos.</p>
+  </div>
+
+      <div class="galeria" data-gallery="cocina" data-size="photo--square"></div>
+    </article>
+
+    <div class="flourish"><svg viewBox="0 0 60 60"><use href="#icon-flor"/></svg></div>
+
+
+    <!-- ESTACIÓN 13 — PAINTBALL -->
+    <article class="estacion align-left">
+  <div class="estacion-texto tarjeta tarjeta--tilt-l">
+      <span class="pill">25 de enero</span>
+      <p class="fecha">25 DE ENERO</p>
+      <h3 class="estacion-titulo display">Nuestra primera guerra a bala</h3>
+
+      <p class="parrafo">Y eso que todavía no subía Abelardo, jajaja. Me gustó ir a jugar paintball contigo y con mis amigos: otra manera de compartir todos una experiencia chévere.</p>
+      <p class="parrafo">Y podemos concluir algo: eres muy buena disparando. Si estamos en el mismo equipo, nadie nos puede ganar.</p>
+  </div>
+
+      <div class="galeria" data-gallery="paintball"></div>
+    </article>
+
+    <div class="flourish"><svg viewBox="0 0 60 60"><use href="#icon-flor"/></svg></div>
+
+
+    <!-- ESTACIÓN 14 — OTRO PICNIC -->
+    <article class="estacion align-right">
+  <div class="estacion-texto tarjeta tarjeta--tilt-r">
+      <span class="pill">28 de enero</span>
+      <p class="fecha">28 DE ENERO</p>
+      <h3 class="estacion-titulo display">Otro picnic, ¿por qué no?</h3>
+  </div>
+
+      <div class="galeria" data-gallery="picnic2" data-size="photo--square"></div>
+    </article>
+
+    <div class="flourish"><svg viewBox="0 0 60 60"><use href="#icon-flor"/></svg></div>
+
+
+    <!-- ESTACIÓN 15 — EL DÍA DEL TRABAJO -->
+    <article class="estacion align-left">
+  <div class="estacion-texto tarjeta tarjeta--tilt-l">
+      <span class="pill">22 de enero de 2026</span>
+      <p class="fecha">22 DE ENERO DE 2026</p>
+      <h3 class="estacion-titulo display">El día del trabajo</h3>
+
+      <p class="parrafo">La primera experiencia laboral de mi mujer trabajadora y <em class="hl-subrayado">guerrera</em>. Y como siempre, su mayor atributo: despierta y avispada. Aunque conmigo no fue el mejor trabajo, jajaja.</p>
+      <p class="parrafo">Fue una sensación muy bonita verte cada vez que prendías directo, y escuchar cómo hablabas con quien fuera — incluso sola. Eres demasiado guerrera y valiente, amor.</p>
+  </div>
+
+      <div class="galeria" data-gallery="trabajo" data-size="photo--wide"></div>
+    </article>
+
+    <div class="flourish"><svg viewBox="0 0 60 60"><use href="#icon-flor"/></svg></div>
+
+
+    <!-- ESTACIÓN 16 — GRADUACIÓN -->
+    <article class="estacion align-right estacion--graduacion">
+  <div class="estacion-texto tarjeta tarjeta--tilt-r">
+      <span class="pill">17 de marzo de 2026</span>
+      <p class="fecha">17 DE MARZO DE 2026</p>
+      <h3 class="estacion-titulo display">Graduación</h3>
+
+      <p class="parrafo">Tanto esfuerzo. Tanta guerra. Tantas ganas. Tantas trasnochadas. Todo nos llevó a cumplir una meta muy grande: con 20 años, tener una carrera encima y volvernos oficialmente profesionales.</p>
+      <p class="parrafo">Te agradezco por tu apoyo durante la carrera, amor. Tu amor, tu amistad y tu compañía me hicieron incluso quedarme en ella. Te adoro por ser tan <em class="hl-marco">guerrera</em>, por luchar incluso cuando ya estábamos desesperados con los trabajos, jajaja.</p>
+      <p class="parrafo">Por todas las veces que Inglés te hizo llorar. Por todas las veces que los profesores nos decían que nuestro trabajo era muy chévere. Por las veces que llegamos a presentar sin dormir, y por todas las veces que después de eso lo único que anhelábamos era una cama.</p>
+      <p class="parrafo">Te amo, mujer hermosa. El vestido que elegiste lo tenía todo: una mujer talentosa, buena en lo que hace, apasionada por la vida. Brillas como el <span class="acento-amarillo">color amarillo</span> de ese vestido. Y eso te hace ver incluso más hermosa.</p>
+  </div>
+
+      <div class="galeria" data-gallery="graduacion"></div>
+    </article>
+
+
+  </section>
+
+  <!-- ============================================================
+       REFLEXIÓN FINAL
+       ============================================================ -->
+  <section id="reflexion" class="section center">
+    <div class="tarjeta">
+      <p class="parrafo">Aunque no puedo reunir todo lo que hemos vivido en una sola página, sé que los momentos a tu lado —buenos o malos— construyen aún más nuestra relación.</p>
+      <p class="parrafo">Y aunque todavía no soy la pareja definitiva, créeme que incluso ahora estoy dando mi <em class="hl-oro">50%</em>. Te amo con todo mi ser, y haría todo por ti.</p>
+      <p class="parrafo">Cuando tenga el 100%, quiero poder hacerte la mujer más feliz del mundo. Cumplirte sueños, metas y aspiraciones. Acompañarte. Apoyarte. Y crecer juntos.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MENSAJE FINAL
+       ============================================================ -->
+  <section id="mensaje" class="section center">
+    <p class="mensaje-titulo display">Feliz día del amor<br>y la amistad, amor.</p>
+    <div class="tarjeta">
+      <p class="parrafo">Y tienes razón: no solo es importante celebrar estos días. También lo es conservar todos los momentos que pasamos juntos, y reunirlos para poder recordar nuestras experiencias.</p>
+      <p class="parrafo">Quiero invitarte a que continuemos creando los nuestros.</p>
+      <p class="parrafo">Veamos una película. Demos inicio a algo nuevo.<br>Pero todo eso… es si dices que <span class="hl-script">sí</span>.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       INVITACIÓN FINAL
+       ============================================================ -->
+  <section id="invitacion" class="section center">
+    <div class="deco deco--float" style="left:8%; top:10%; opacity:.5;"><svg viewBox="0 0 60 60"><use href="#icon-flor"/></svg></div>
+    <p class="invitacion-pregunta display">¿Quieres estar conmigo<br>en nuestro día del amor<br>y la amistad?</p>
+    <p class="invitacion-fecha" id="invitacion-fecha-texto">Lunes 21 de septiembre de 2026</p>
+    <p class="invitacion-indicacion" id="invitacion-whatsapp">tu respuesta llegará por WhatsApp 💬</p>
+  </section>
+
+  <!-- ============================================================
+       CIERRE
+       ============================================================ -->
+  <section id="cierre" class="section center">
+    <p class="cierre-texto display">Sigamos llenando<br>nuestros días, amor.</p>
+    <p class="cierre-firma">☙</p>
+  </section>
+
+</div><!-- /app -->
+
+<!-- ============================================================
+     LIBRERÍAS (GSAP) + SCRIPTS PROPIOS
+     ============================================================ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script src="js/config.js"></script>
+<script src="js/photos.js"></script>
+<script src="js/loader.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
