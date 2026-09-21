@@ -26,16 +26,16 @@ const CONFIG = {
      Agrega tantos universos como quieras (mínimo pensado: 10).
      "label" es el texto pequeño que aparece bajo la imagen. */
   universos: [
-    { label: "Universo 01", file: "assets/images/universos/universo-01.jpg" },
-    { label: "Universo 02", file: "assets/images/universos/universo-02.jpg" },
-    { label: "Universo 03", file: "assets/images/universos/universo-03.jpg" },
-    { label: "Universo 04", file: "assets/images/universos/universo-04.jpg" },
-    { label: "Universo 05", file: "assets/images/universos/universo-05.jpg" },
-    { label: "Universo 06", file: "assets/images/universos/universo-06.jpg" },
-    { label: "Universo 07", file: "assets/images/universos/universo-07.jpg" },
-    { label: "Universo 08", file: "assets/images/universos/universo-08.jpg" },
-    { label: "Universo 09", file: "assets/images/universos/universo-09.jpg" },
-    { label: "Universo 10", file: "assets/images/universos/universo-10.jpg" },
+    { label: "", file: "assets/images/universos/universo-01.jpg" },
+    { label: "", file: "assets/images/universos/universo-02.jpg" },
+    { label: "", file: "assets/images/universos/universo-03.jpg" },
+    { label: "", file: "assets/images/universos/universo-04.jpg" },
+    { label: "", file: "assets/images/universos/universo-05.jpg" },
+    { label: "", file: "assets/images/universos/universo-06.jpg" },
+    { label: "", file: "assets/images/universos/universo-07.jpg" },
+    { label: "", file: "assets/images/universos/universo-08.jpg" },
+    { label: "", file: "assets/images/universos/universo-09.jpg" },
+    { label: "", file: "assets/images/universos/universo-10.jpg" },
     // Para agregar más, copia una línea y cambia el número:
     // { label: "Universo 11", file: "assets/images/universos/universo-11.jpg" },
   ],
@@ -63,8 +63,6 @@ const CONFIG = {
       "assets/images/timeline/monserrate/foto-monserrate-04.jpg",
       "assets/images/timeline/monserrate/foto-monserrate-05.jpg",
       "assets/images/timeline/monserrate/foto-monserrate-06.jpg",
-      "assets/images/timeline/monserrate/foto-monserrate-07.jpg",
-      "assets/images/timeline/monserrate/foto-monserrate-08.jpg",
     ],
 
     salitre: [
@@ -76,29 +74,23 @@ const CONFIG = {
     halloween: [
       "assets/images/timeline/halloween/foto-halloween-01.jpg",
       "assets/images/timeline/halloween/foto-halloween-02.jpg",
-      "assets/images/timeline/halloween/foto-halloween-03.jpg",
     ],
 
     diciembre: [
-      "assets/images/timeline/diciembre/foto-diciembre-01.jpg",
-      "assets/images/timeline/diciembre/foto-diciembre-02.jpg",
     ],
 
     festivalbrilla: [
-      "assets/images/timeline/diciembre/foto-brilla-01.jpg",
-      "assets/images/timeline/diciembre/foto-brilla-02.jpg",
-      "assets/images/timeline/diciembre/foto-brilla-03.jpg",
     ],
 
-    cumple18: [
-      "assets/images/timeline/diciembre/foto-cumple18-01.jpg",
-      "assets/images/timeline/diciembre/foto-cumple18-02.jpg",
+    cumple19: [
+      "assets/images/timeline/diciembre/foto-cumple19-01.jpg",
     ],
 
     canela: [
       "assets/images/timeline/canela/foto-canela-01.jpg",
       "assets/images/timeline/canela/foto-canela-02.jpg",
       "assets/images/timeline/canela/foto-canela-03.jpg",
+      "assets/images/timeline/canela/foto-canela-04.jpg",
     ],
 
     llegadacanela: [
@@ -125,9 +117,6 @@ const CONFIG = {
     ],
 
     paintball: [
-      "assets/images/timeline/paintball/foto-paintball-01.jpg",
-      "assets/images/timeline/paintball/foto-paintball-02.jpg",
-      "assets/images/timeline/paintball/foto-paintball-03.jpg",
     ],
 
     trabajo: [
@@ -142,8 +131,6 @@ const CONFIG = {
       "assets/images/timeline/graduacion/foto-graduacion-04.jpg",
       "assets/images/timeline/graduacion/foto-graduacion-05.jpg",
       "assets/images/timeline/graduacion/foto-graduacion-06.jpg",
-      "assets/images/timeline/graduacion/foto-graduacion-07.jpg",
-      "assets/images/timeline/graduacion/foto-graduacion-08.jpg",
     ],
   },
 
